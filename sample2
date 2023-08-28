@@ -29,11 +29,12 @@ VALIDATE() {
  then 
 
  echo -e "this loop $R will execute $G"
-
-
+exit1
 else
 
 echo -e  "this pgm will execute $R then $N"
+ fi
+
 }
 
 if [ $USERID -ne 0 ]
