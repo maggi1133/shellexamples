@@ -22,7 +22,7 @@ LOGFILE=$LOGDIR-$SCRIPT_NAME-$DATE.log.txt
 
 USERID=(id -u)
 
-VALIDATE(){
+VALIDATE() {
  
  if [ $1 -gt 0 ]
 
@@ -30,7 +30,6 @@ VALIDATE(){
 
  echo -e "this loop $R will execute $G"
 
-exit1
 
 else
 
