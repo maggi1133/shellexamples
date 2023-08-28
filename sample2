@@ -1,0 +1,60 @@
+#!/bin/bash
+
+echo "this is my frst sample script pgm"
+
+R="\e[32m"
+
+G="\e[31m"
+
+Y="\e[30m"
+
+N="\e[0m"
+
+LOGDIR=/tmp
+
+DATE=$(date +%F:%H:%M:%S)
+
+echo "to print the date $DATE"
+
+SCRIPT_NAME=$0
+
+LOGFILE=$LOGDIR-$SCRIPT_NAME-$DATE.log.txt
+
+USERID=(id -u)
+
+VALIDATE(){
+ 
+ if [ $1 -gt 0 ]
+
+ then 
+
+ echo -e "this loop $R will execute $G"
+
+exit1
+
+else
+
+echo -e  "this pgm will execute $R then $N"
+}
+
+if [ $USERID -ne 0 ]
+
+then
+
+ echo -e "this loop $R will execute $G"
+exit1
+
+else
+
+ echo -e "this loop $R will execute $N"
+
+ fi
+
+ yum install git -y &>>$LOGDIR
+
+ VALIDATE #? "inastall git"
+
+ yum install nginx -y &>>$LOGDIR
+
+ VALIDATE #? "inastall nginx"
+
